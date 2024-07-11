@@ -1,6 +1,5 @@
-// return docs
 if (url.pathname === "/") {
-  return new Response(DOCS, {
+  return new Response("./help.html", {
     status: 200,
     headers: {
       "content-type": "text/html"
@@ -8,7 +7,7 @@ if (url.pathname === "/") {
   });
 }
 
-addEventListener("fetch", (event) => {
+stener("fetch", (event) => {
   event.passThroughOnException();
   event.respondWith(handleRequest(event.request));
 });
